@@ -1,13 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const InputBox = () => {
+const InputBox = (props) => {
   return (
-      <>
-          <div>
-              <input id='inputBox' placeholder='Enter you text here'></input>
-          </div>
-      </>
-  )
-}
+    <>
+      <div>
+        <div id="inputBox" onClick={props.copy(props.name)}>
+          {props.name ? props.name : "Enter your text"}
+        </div>
+      </div>
+    </>
+  );
+};
 
-export default InputBox
+export default InputBox;
