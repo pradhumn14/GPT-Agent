@@ -1,13 +1,21 @@
 import React from "react";
 
-const RecordButton = () => {
+const RecordButton = (props) => {
+
+
   return (
     <>
-      <button id="recordBtn" type="button" class="btn btn-warning">
+      <button
+        id="recordBtn"
+        type="button"
+        className="btn btn-warning"
+        onClick={props.name}
+      >
         Record
       </button>
     </>
   );
 };
 
-export default RecordButton;
+// export { transcript, printText, RecordButton}
+export default RecordButton

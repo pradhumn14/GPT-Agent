@@ -1,13 +1,25 @@
-import React from 'react'
+import React from "react";
+import UseVoice from "../Hooks/UseVoice";
 
-const InputBox = () => {
+const InputBox = (props) => {
+  const handleChange = (event) => {
+    const inputValue = event.target.value;
+    console.log(inputValue);
+    props.onChange(inputValue);
+  };
+
   return (
-      <>
-          <div>
-              <input id='inputBox' placeholder='Enter you text here'></input>
-          </div>
-      </>
-  )
-}
+    <>
+      <div>
+        <input
+          id="inputBox"
+          placeholder="enter txt"
+          value={props.name}
+          onChange={handleChange}
+        />
+      </div>
+    </>
+  );
+};
 
-export default InputBox
+export default InputBox;

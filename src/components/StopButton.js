@@ -1,13 +1,18 @@
-import React from 'react'
+import React from "react";
 
-const StopButton = () => {
+const StopButton = (props) => {
   return (
     <>
-      <button id='stopBtn' type="button" class="btn btn-danger">
+      <button
+        id="stopBtn"
+        type="button"
+        className="btn btn-danger"
+        onClick={props.name}
+      >
         Stop
       </button>
     </>
   );
-}
+};
 
-export default StopButton
+export default StopButton;
