@@ -1,6 +1,5 @@
-import React from 'react'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 const UseVoice = () => {
 
@@ -24,15 +23,13 @@ const UseVoice = () => {
         
         setTextToCopy(fun);
     }
-    
-    // const checkSupport = () => {
-    //     if (!browserSupportsSpeechRecognition) {
-    //         return null;
-    //     }
-    // }    
-    
 
-    return [transcript, printText, startListening, stopListening]
+    const printInUser = {
+        textContent: `You said ${transcript}`,
+    }
+
+    return [transcript, printText, startListening, stopListening, printInUser]
+
 }
 
-export default UseVoice
+export default UseVoice;

@@ -1,12 +1,22 @@
 import React from "react";
+import UseVoice from "../Hooks/UseVoice";
 
 const InputBox = (props) => {
+  const handleChange = (event) => {
+    const inputValue = event.target.value;
+    console.log(inputValue);
+    props.onChange(inputValue);
+  };
+
   return (
     <>
       <div>
-        <div id="inputBox" onClick={props.copy(props.name)}>
-          {props.name ? props.name : "Enter your text"}
-        </div>
+        <input
+          id="inputBox"
+          placeholder="enter txt"
+          value={props.name}
+          onChange={handleChange}
+        />
       </div>
     </>
   );
